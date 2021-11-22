@@ -1,0 +1,83 @@
+{
+    "version": "Notebook/1.0",
+    "items": [
+      {
+        "type": 9,
+        "content": {
+          "version": "KqlParameterItem/1.0",
+          "parameters": [
+            {
+              "id": "cc98cfec-0182-4887-854e-536e9f3857da",
+              "version": "KqlParameterItem/1.0",
+              "name": "Subscription",
+              "type": 6,
+              "isRequired": true,
+              "value": "/subscriptions/85013df5-dac2-4f43-87f9-68819950a5d4",
+              "typeSettings": {
+                "additionalResourceOptions": [
+                  "value::1"
+                ],
+                "includeAll": true
+              },
+              "timeContext": {
+                "durationMs": 86400000
+              }
+            },
+            {
+              "id": "1c3411d9-e319-4d74-8e97-61e2f4c56a56",
+              "version": "KqlParameterItem/1.0",
+              "name": "Location",
+              "type": 2,
+              "isRequired": true,
+              "typeSettings": {
+                "additionalResourceOptions": [
+                  "value::1"
+                ],
+                "showDefault": false
+              },
+              "jsonData": "[{\"value\": \"eastus\", \"label\": \"East US\" },\r\n{\"value\": \"eastus2\", \"label\": \"East US2\", \"selected\":true },\r\n{\"value\": \"centralus\", \"label\": \"Central US\" }\r\n]",
+              "timeContext": {
+                "durationMs": 86400000
+              }
+            },
+            {
+              "id": "35da4e29-594a-43dc-8ac9-7190b8ba7a2b",
+              "version": "KqlParameterItem/1.0",
+              "name": "ResourceType",
+              "type": 2,
+              "isRequired": true,
+              "value": "microsoft.compute",
+              "typeSettings": {
+                "additionalResourceOptions": [
+                  "value::1"
+                ],
+                "showDefault": false
+              },
+              "jsonData": "[{\"value\": \"microsoft.compute\", \"label\": \"Compute\" },\r\n{\"value\": \"Microsoft.MachineLearningServices\", \"label\": \"Machine Learning Services\"}\r\n]",
+              "timeContext": {
+                "durationMs": 86400000
+              }
+            }
+          ],
+          "style": "pills",
+          "queryType": 0,
+          "resourceType": "microsoft.operationalinsights/workspaces"
+        },
+        "name": "parameters - 0"
+      },
+      {
+        "type": 3,
+        "content": {
+          "version": "KqlItem/1.0",
+          "query": "{\"version\":\"ARMEndpoint/1.0\",\"data\":null,\"headers\":[],\"method\":\"GET\",\"path\":\"/subscriptions/{Subscription:id}/providers/Microsoft.Capacity/resourceProviders/{ResourceType}/locations/{Location}/serviceLimits?api-version=2020-10-25\",\"urlParams\":[],\"batchDisabled\":false,\"transformers\":[{\"type\":\"jsonpath\",\"settings\":{\"tablePath\":\"$.value\",\"columns\":[{\"path\":\"properties.currentValue\",\"columnid\":\"CoresUsed\"},{\"path\":\"properties.limit\",\"columnid\":\"Limit\"},{\"path\":\"properties.name.value\",\"columnid\":\"Sku\"}]}}]}",
+          "size": 0,
+          "queryType": 12
+        },
+        "name": "query - 1"
+      }
+    ],
+    "fallbackResourceIds": [
+      "Azure Monitor"
+    ],
+    "$schema": "https://github.com/Microsoft/Application-Insights-Workbooks/blob/master/schema/workbook.json"
+  }
